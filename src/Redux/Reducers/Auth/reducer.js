@@ -5,6 +5,7 @@ const initialState = {
   email: null,
   accessToken: null,
   role: null,
+  id: null,
 };
 
 const authSlice = createSlice({
@@ -12,12 +13,12 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     updateUserDetails(state, action) {
-      const { email, role, accessToken, name } = action.payload;
-
+      const { email, role, accessToken, name, id } = action.payload;
       state.accessToken = accessToken;
       state.name = name;
       state.email = email;
       state.role = role;
+      state.id = id;
     },
   },
 });
